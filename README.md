@@ -4,9 +4,9 @@
 - Shif: I-C
 
 ## Pertemuan 2 Tugas 1
-## Tampilan Aplikasi
+### Tampilan Aplikasi
 ![Tampilan Aplikasi](TampilanAplikasi.png)
 
 ## Pertemuan 3 Tugas 2
-## Vidio Demo Aplikasi
+### Vidio Demo Aplikasi
 ![Demo Aplikasi](DemoAplikasi1.gif)
