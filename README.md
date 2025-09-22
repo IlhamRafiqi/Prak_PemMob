@@ -9,4 +9,4 @@
 
 ## Pertemuan 3 Tugas 2
 ## Vidio Demo Aplikasi
-![Demo Aplikasi](demo_aplikasi_1.gif)
+![Demo Aplikasi](DemoAplikasi1.gif)
