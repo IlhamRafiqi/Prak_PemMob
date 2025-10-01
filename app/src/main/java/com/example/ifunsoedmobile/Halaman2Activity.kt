@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import com.example.ifunsoedmobile.databinding.ActivityHalaman2Binding
+import com.example.ifunsoedmobile.ui.DaftarBukuActivity
 
 class Halaman2Activity : AppCompatActivity() {
 
@@ -50,6 +51,11 @@ class Halaman2Activity : AppCompatActivity() {
             it.imgIcon.setImageResource(R.drawable.ic_phone)
             it.tvLayout.setText(R.string.telepon)
         }
+
+        binding.layoutBuku.let {
+            it.imgIcon.setImageResource(R.drawable.ic_book)
+            it.tvLayout.text = "Koleksi Buku"
+        }
     }
 
     // Listener untuk klik pada setiap item
@@ -82,6 +88,11 @@ class Halaman2Activity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_DIAL).apply {
                 data = "tel:${getString(R.string.telepon)}".toUri()
             }
+            startActivity(intent)
+        }
+
+        binding.layoutBuku.root.setOnClickListener {
+            val intent = Intent(this, DaftarBukuActivity::class.java)
             startActivity(intent)
         }
 

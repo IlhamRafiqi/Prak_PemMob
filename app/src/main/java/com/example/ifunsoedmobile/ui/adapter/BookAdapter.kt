@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ifunsoedmobile.data.model.BookDoc
 import com.example.ifunsoedmobile.databinding.ListBukuBinding
 
-class BookAdapter(private var books: List<BookDoc>) :
+class BookAdapter(private var books: List<BookDoc>, private val onBookClickListener: OnBookClickListener) :
     RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
 
     // ViewHolder menyimpan referensi ke elemen UI di layout list_buku.xml
@@ -29,6 +29,10 @@ class BookAdapter(private var books: List<BookDoc>) :
         holder.binding.tvTitle.text = book.title ?: "Tidak ada judul"
         holder.binding.tvAuthor.text = book.authorName?.joinToString(", ") ?: "Tidak ada penulis"
         holder.binding.tvYear.text = book.firstPublishYear?.toString() ?: "-"
+
+        holder.binding.root.setOnClickListener {
+            onBookClickListener.onBookClick(book)
+        }
     }
 
     // Update data adapter
@@ -36,4 +40,8 @@ class BookAdapter(private var books: List<BookDoc>) :
         books = newBooks
         notifyDataSetChanged()
     }
+}
+
+interface OnBookClickListener {
+    fun onBookClick(book: BookDoc)
 }
